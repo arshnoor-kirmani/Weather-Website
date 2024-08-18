@@ -104,7 +104,7 @@ div.weather-right-part {
   display: grid;
   place-content: center;
 }
-div.weather-right-part img {
+div.main-weather-show div.weather-right-part img {
   margin-right: 45%;
   width: 100%;
 }
@@ -249,4 +249,63 @@ div.day-box div.weather {
 }
 div.day-box span {
   font-size: 0.75rem;
+}
+/* =============================================================================================================== 
+                                                    Cites section styling
+/* =============================================================================================================== */
+div.cites-seciton {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto;
+}
+div.cites-container {
+  width: 100%;
+  height: 100%;
+  padding: 1.3rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, 25%);
+}
+div.cites-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+  padding-left: 0.5rem;
+  background-color: var(--section-bgcolor);
+  border-radius: var(---radius);
+  height: 80%;
+  cursor: pointer;
+}
+div.cites-box:first-child {
+  border: 1px solid #55a3d4;
+  background-color: transparent;
+}
+div.cites-box div.Box {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 35%;
+}
+div.cites-box span.temp {
+  font-size: 1.7rem;
+}
+div.top-cite-weather-temp {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+div.cites-right {
+  padding-top: 2rem;
+}
+div.cites-right div.weather-right-part {
+  display: flex;
+}
+div.weather-right-part img {
+  width: 50%;
+}
+div.top-cite-weather-temp h1.weather-temp {
+  font-size: 2.2rem;
 }

@@ -13,7 +13,7 @@
           <img src="./icons/Sun.png" alt="" width="50px" />
         </div>
         <ul>
-          <li>
+          <li class="weather">
             <svg
               viewBox="0 0 576 512"
               style="
@@ -31,7 +31,7 @@
             </svg>
             <span>Wather</span>
           </li>
-          <li>
+          <li class="cites">
             <svg
               viewBox="0 0 576 512"
               style="
@@ -69,6 +69,9 @@
           </li>
         </ul>
       </section>
+      <!-- =========================================================================================================
+                                                  Weather Landing Page
+       ========================================================================================================= -->
       <section class="right">
         <input type="text" class="search" placeholder="Search for Cites" />
         <div class="weather-box">
@@ -320,7 +323,158 @@
             </div>
           </div>
         </div>
+        <div class="cites-seciton" style="display: none">
+          <div class="cites-left">
+            <div class="cites-container">
+              <div class="cites-box">
+                <div class="Box">
+                  <div class="weather-icon">
+                    <img src="./icons/cloud.png" alt="" width="50px" />
+                  </div>
+                  <div class="cites_name-time">
+                    <h1 class="citeName">Madrid</h1>
+                    <span>10:23</span>
+                  </div>
+                </div>
+                <div class="cites-weather-temp">
+                  <span class="temp">23°</span>
+                </div>
+              </div>
+              <div class="cites-box">
+                <div class="Box">
+                  <div class="weather-icon">
+                    <img src="./icons/cloud.png" alt="" width="50px" />
+                  </div>
+                  <div class="cites_name-time">
+                    <h1 class="citeName">Madrid</h1>
+                    <span>10:23</span>
+                  </div>
+                </div>
+                <div class="cites-weather-temp">
+                  <span class="temp">23°</span>
+                </div>
+              </div>
+              <div class="cites-box">
+                <div class="Box">
+                  <div class="weather-icon">
+                    <img src="./icons/cloud.png" alt="" width="50px" />
+                  </div>
+                  <div class="cites_name-time">
+                    <h1 class="citeName">Madrid</h1>
+                    <span>10:23</span>
+                  </div>
+                </div>
+                <div class="cites-weather-temp">
+                  <span class="temp">23°</span>
+                </div>
+              </div>
+              <div class="cites-box">
+                <div class="Box">
+                  <div class="weather-icon">
+                    <img src="./icons/cloud.png" alt="" width="50px" />
+                  </div>
+                  <div class="cites_name-time">
+                    <h1 class="citeName">Madrid</h1>
+                    <span>10:23</span>
+                  </div>
+                </div>
+                <div class="cites-weather-temp">
+                  <span class="temp">23°</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cites-right">
+            <div class="top-cite-weather-temp">
+              <div class="weather-left-part">
+                <div class="part-left-top">
+                  <h1 class="cite-name">India</h1>
+                  <span class="rain-chances">Chance of rain 0%</span>
+                </div>
+                <div class="part-left-bottom">
+                  <h1 class="weather-temp">31°</h1>
+                </div>
+              </div>
+              <div class="weather-right-part">
+                <img
+                  src="./icons/Sun.png"
+                  alt=""
+                  width="50px"
+                  class="weather-icon"
+                />
+              </div>
+            </div>
+            <div class="top-cite-time-weather padding1rem">
+              <h1 class="title">Today's Forecast</h1>
+              <div class="weather-time-section">
+                <div class="weather-time-box">
+                  <span class="time">6:00 AM</span>
+                  <img src="./icons/Raing Cloud.png" width="50px" alt="" />
+                  <h3 class="time-weather-temp">21°</h3>
+                </div>
+                <div class="weather-time-box">
+                  <span class="time">6:00 AM</span>
+                  <img src="./icons/Raing Cloud.png" width="50px" alt="" />
+                  <h3 class="time-weather-temp">22°</h3>
+                </div>
+                <div class="weather-time-box">
+                  <span class="time">6:00 AM</span>
+                  <img src="./icons/CloudeSUn.png" width="50px" alt="" />
+                  <h3 class="time-weather-temp">23°</h3>
+                </div>
+              </div>
+            </div>
+            <div class="top-cite-day-weather padding1rem">
+              <h1 class="title">7- DAY's forecast</h1>
+              <div class="day-container">
+                <div class="day-box">
+                  <span class="day-name">Today</span>
+                  <div class="weather">
+                    <img
+                      src="./icons/Sun.png"
+                      alt=""
+                      class="weather-icons"
+                      width="50px"
+                    />
+                    <span class="weather-title">sunny</span>
+                  </div>
+                  <span class="retio">37/21</span>
+                </div>
+                <div class="day-box">
+                  <span class="day-name">Today</span>
+                  <div class="weather">
+                    <img
+                      src="./icons/cloud.png"
+                      alt=""
+                      class="weather-icons"
+                      width="50px"
+                    />
+                    <span class="weather-title">sunny</span>
+                  </div>
+                  <span class="retio">37/21</span>
+                </div>
+                <div class="day-box">
+                  <span class="day-name">Today</span>
+                  <div class="weather">
+                    <img
+                      src="./icons/Sun.png"
+                      alt=""
+                      class="weather-icons"
+                      width="50px"
+                    />
+                    <span class="weather-title">sunny</span>
+                  </div>
+                  <span class="retio">37/21</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+      <!-- =========================================================================================================
+                                                  Weather Cites Page
+       ========================================================================================================= -->
     </main>
   </body>
+  <script src="./script.js"></script>
 </html>
