@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <style></style>
     <title>Weather Info Website</title>
   </head>
   <body>
@@ -13,7 +14,7 @@
           <img src="./icons/Sun.png" alt="" width="50px" />
         </div>
         <ul>
-          <li class="weather">
+          <li onclick="weathershow()">
             <svg
               viewBox="0 0 576 512"
               style="
@@ -31,7 +32,7 @@
             </svg>
             <span>Wather</span>
           </li>
-          <li class="cites">
+          <li onclick="citesshow()">
             <svg
               viewBox="0 0 576 512"
               style="
@@ -49,7 +50,7 @@
             </svg>
             <span>Cites</span>
           </li>
-          <li>
+          <li onclick="settingshow()">
             <svg
               viewBox="0 0 512 512"
               style="
@@ -323,7 +324,7 @@
             </div>
           </div>
         </div>
-        <div class="cites-seciton" style="display: none">
+        <div class="cites-seciton displaynone">
           <div class="cites-left">
             <div class="cites-container">
               <div class="cites-box">
@@ -425,7 +426,7 @@
               </div>
             </div>
             <div class="top-cite-day-weather padding1rem">
-              <h1 class="title">7- DAY's forecast</h1>
+              <h1 class="title">3- DAY's forecast</h1>
               <div class="day-container">
                 <div class="day-box">
                   <span class="day-name">Today</span>
@@ -471,6 +472,78 @@
           </div>
         </div>
       </section>
+
+      <div class="setting-section displaynone">
+        <div class="unites">
+          <!-- <h1 class="settingtitle">Unites</h1> -->
+          <div class="temperature">
+            <h1 class="title">temperature</h1>
+            <div class="container">
+              <div class="menus temperatureOption selected">
+                <span>calsius</span>
+              </div>
+              <div class="menus temperatureOption"><span>fehrenheit</span></div>
+            </div>
+          </div>
+          <div class="wind-speed">
+            <h1 class="title">speed</h1>
+            <div class="container">
+              <div class="menus wind-speedOptions selected">
+                <span>km/h</span>
+              </div>
+              <div class="menus wind-speedOptions"><span>m/s</span></div>
+              <div class="menus wind-speedOptions"><span>knots</span></div>
+            </div>
+          </div>
+          <div class="pressure">
+            <h1 class="title">pressure</h1>
+            <div class="container">
+              <div class="menus pressureOptions selected"><span>hPa</span></div>
+              <div class="menus pressureOptions"><span>inches</span></div>
+              <div class="menus pressureOptions"><span>kPa</span></div>
+              <div class="menus pressureOptions"><span>mm</span></div>
+            </div>
+          </div>
+          <div class="precipation">
+            <h1 class="title">precipation</h1>
+            <div class="container">
+              <div class="menus precipationOptions selected">
+                <span>Milimeters</span>
+              </div>
+              <div class="menus precipationOptions"><span>Inches</span></div>
+            </div>
+          </div>
+          <div class="distance">
+            <h1 class="title">distance</h1>
+            <div class="container">
+              <div class="menus distanceOptions selected">
+                <span>Kilometers</span>
+              </div>
+              <div class="menus distanceOptions"><span>Miles</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="general">
+          <!-- <h1 class="settingtitle">General</h1> -->
+          <div class="time-format">
+            <h5>12-Houre Time</h5>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="location-acces">
+            <div>
+              <h5>Location</h5>
+              <span>Get Weather of your locations</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
       <!-- =========================================================================================================
                                                   Weather Cites Page
        ========================================================================================================= -->
