@@ -80,11 +80,13 @@
             <div class="main-weather-show">
               <div class="weather-left-part">
                 <div class="part-left-top">
-                  <h1 class="cite-name">India</h1>
-                  <span class="rain-chances">Chance of rain 0%</span>
+                  <h1 class="cite-name" id="cuurentCity">India</h1>
+                  <span class="rain-chances"
+                    >Chance of rain <span id="rainChance">0%</span></span
+                  >
                 </div>
                 <div class="part-left-bottom">
-                  <h1 class="weather-temp">31°</h1>
+                  <h1 class="weather-temp" id="cuurentTemp">31°</h1>
                 </div>
               </div>
               <div class="weather-right-part">
@@ -93,6 +95,7 @@
                   alt=""
                   width="100px"
                   class="weather-icon"
+                  id="currentWeatherImg"
                 />
               </div>
             </div>
@@ -100,38 +103,76 @@
               <h1 class="title">Today's Forecast</h1>
               <div class="weather-time-section">
                 <div class="weather-time-box">
-                  <span class="time">6:00 AM</span>
-                  <img src="./icons/Raing Cloud.png" width="50px" alt="" />
-                  <h3 class="time-weather-temp">21°</h3>
-                </div>
-                <div class="weather-time-box">
-                  <span class="time">6:00 AM</span>
-                  <img src="./icons/Raing Cloud.png" width="50px" alt="" />
-                  <h3 class="time-weather-temp">22°</h3>
-                </div>
-                <div class="weather-time-box">
-                  <span class="time">6:00 AM</span>
-                  <img src="./icons/CloudeSUn.png" width="50px" alt="" />
-                  <h3 class="time-weather-temp">23°</h3>
-                </div>
-                <div class="weather-time-box">
-                  <span class="time">6:00 AM</span>
+                  <span class="time" id="currentCityTime">6:00 AM</span>
                   <img
-                    src="./icons/Raing Cloud thunder.png"
-                    width="50px"
+                    src="./icons/Raing Cloud.png"
+                    width="44px"
+                    id="currentCityTimeImage"
                     alt=""
                   />
-                  <h3 class="time-weather-temp">24°</h3>
+                  <h3 class="time-weather-temp" id="currentCityTimeTemp">
+                    21°
+                  </h3>
                 </div>
                 <div class="weather-time-box">
-                  <span class="time">6:00 AM</span>
-                  <img src="./icons/CloudeSUn.png" width="50px" alt="" />
-                  <h3 class="time-weather-temp">25°</h3>
+                  <span class="time" id="currentCityTime">6:00 AM</span>
+                  <img
+                    src="./icons/Raing Cloud.png"
+                    width="44px"
+                    id="currentCityTimeImage"
+                    alt=""
+                  />
+                  <h3 class="time-weather-temp" id="currentCityTimeTemp">
+                    22°
+                  </h3>
                 </div>
                 <div class="weather-time-box">
-                  <span class="time">6:00 AM</span>
-                  <img src="./icons/CloudeSUn.png" width="50px" alt="" />
-                  <h3 class="time-weather-temp">26°</h3>
+                  <span class="time" id="currentCityTime">6:00 AM</span>
+                  <img
+                    src="./icons/CloudeSUn.png"
+                    width="44px"
+                    id="currentCityTimeImage"
+                    alt=""
+                  />
+                  <h3 class="time-weather-temp" id="currentCityTimeTemp">
+                    23°
+                  </h3>
+                </div>
+                <div class="weather-time-box">
+                  <span class="time" id="currentCityTime">6:00 AM</span>
+                  <img
+                    src="./icons/Raing Cloud thunder.png"
+                    width="44px"
+                    alt=""
+                    id="currentCityTimeImage"
+                  />
+                  <h3 class="time-weather-temp" id="currentCityTimeTemp">
+                    24°
+                  </h3>
+                </div>
+                <div class="weather-time-box">
+                  <span class="time" id="currentCityTime">6:00 AM</span>
+                  <img
+                    src="./icons/CloudeSUn.png"
+                    width="44px"
+                    id="currentCityTimeImage"
+                    alt=""
+                  />
+                  <h3 class="time-weather-temp" id="currentCityTimeTemp">
+                    25°
+                  </h3>
+                </div>
+                <div class="weather-time-box">
+                  <span class="time" id="currentCityTime">6:00 AM</span>
+                  <img
+                    src="./icons/CloudeSUn.png"
+                    width="44px"
+                    id="currentCityTimeImage"
+                    alt=""
+                  />
+                  <h3 class="time-weather-temp" id="currentCityTimeTemp">
+                    26°
+                  </h3>
                 </div>
               </div>
             </div>
@@ -159,7 +200,7 @@
                     </svg>
                     <span>Real Feel</span>
                   </div>
-                  <h3 class="innerbox-title temp">22°</h3>
+                  <h3 class="innerbox-title temp" id="feelling">22°</h3>
                 </div>
                 <div class="innerbox">
                   <div class="top">
@@ -180,7 +221,7 @@
                     </svg>
                     <span>Wind</span>
                   </div>
-                  <h3 class="innerbox-title wind">0.2 KM/H</h3>
+                  <h3 class="innerbox-title wind" id="windSpeed">0.2 KM/H</h3>
                 </div>
                 <div class="innerbox">
                   <div class="top">
@@ -201,7 +242,9 @@
                     </svg>
                     <span>Chance of Rain</span>
                   </div>
-                  <h3 class="innerbox-title rain">10%</h3>
+                  <h3 class="innerbox-title rain">
+                    <span id="rainChance">0%</span>
+                  </h3>
                 </div>
                 <div class="innerbox">
                   <div class="top">
@@ -222,7 +265,7 @@
                     </svg>
                     <span>UV Index</span>
                   </div>
-                  <h3 class="innerbox-title index">3</h3>
+                  <h3 class="innerbox-title index" id="uvIndex">3</h3>
                 </div>
               </div>
             </div>
@@ -231,95 +274,116 @@
             <h1 class="title">7- DAY's forecast</h1>
             <div class="day-container">
               <div class="day-box">
-                <span class="day-name">Today</span>
+                <span class="day-name" id="futureDayName">Today</span>
                 <div class="weather">
                   <img
                     src="./icons/Sun.png"
                     alt=""
                     class="weather-icons"
-                    width="50px"
+                    width="44px"
+                    id="futureDayWeatherImage"
                   />
-                  <span class="weather-title">sunny</span>
+                  <span class="weather-title" id="futureDayWeatherTitle"
+                    >sunny</span
+                  >
                 </div>
-                <span class="retio">37/21</span>
+                <span class="retio" id="futureDayWeatherTempArr">37/21</span>
               </div>
               <div class="day-box">
-                <span class="day-name">Today</span>
+                <span class="day-name" id="futureDayName">Today</span>
                 <div class="weather">
                   <img
                     src="./icons/cloud.png"
                     alt=""
                     class="weather-icons"
-                    width="50px"
+                    width="44px"
+                    id="futureDayWeatherImage"
                   />
-                  <span class="weather-title">sunny</span>
+                  <span class="weather-title" id="futureDayWeatherTitle"
+                    >sunny</span
+                  >
                 </div>
-                <span class="retio">37/21</span>
+                <span class="retio" id="futureDayWeatherTempArr">37/21</span>
               </div>
               <div class="day-box">
-                <span class="day-name">Today</span>
+                <span class="day-name" id="futureDayName">Today</span>
                 <div class="weather">
                   <img
                     src="./icons/Sun.png"
                     alt=""
                     class="weather-icons"
-                    width="50px"
+                    width="44px"
+                    id="futureDayWeatherImage"
                   />
-                  <span class="weather-title">sunny</span>
+                  <span class="weather-title" id="futureDayWeatherTitle"
+                    >sunny</span
+                  >
                 </div>
-                <span class="retio">37/21</span>
+                <span class="retio" id="futureDayWeatherTempArr">37/21</span>
               </div>
               <div class="day-box">
-                <span class="day-name">Today</span>
+                <span class="day-name" id="futureDayName">Today</span>
                 <div class="weather">
                   <img
                     src="./icons/Raing Cloud.png"
                     alt=""
                     class="weather-icons"
-                    width="50px"
+                    width="44px"
+                    id="futureDayWeatherImage"
                   />
-                  <span class="weather-title">sunny</span>
+                  <span class="weather-title" id="futureDayWeatherTitle"
+                    >sunny</span
+                  >
                 </div>
-                <span class="retio">37/21</span>
+                <span class="retio" id="futureDayWeatherTempArr">37/21</span>
               </div>
               <div class="day-box">
-                <span class="day-name">Today</span>
+                <span class="day-name" id="futureDayName">Today</span>
                 <div class="weather">
                   <img
                     src="./icons/Raing Cloud thunder.png"
                     alt=""
                     class="weather-icons"
-                    width="50px"
+                    width="44px"
+                    id="futureDayWeatherImage"
                   />
-                  <span class="weather-title">sunny</span>
+                  <span class="weather-title" id="futureDayWeatherTitle"
+                    >sunny</span
+                  >
                 </div>
-                <span class="retio">37/21</span>
+                <span class="retio" id="futureDayWeatherTempArr">37/21</span>
               </div>
               <div class="day-box">
-                <span class="day-name">Today</span>
+                <span class="day-name" id="futureDayName">Today</span>
                 <div class="weather">
                   <img
                     src="./icons/cloud.png"
                     alt=""
                     class="weather-icons"
-                    width="50px"
+                    width="44px"
+                    id="futureDayWeatherImage"
                   />
-                  <span class="weather-title">sunny</span>
+                  <span class="weather-title" id="futureDayWeatherTitle"
+                    >sunny</span
+                  >
                 </div>
-                <span class="retio">37/21</span>
+                <span class="retio" id="futureDayWeatherTempArr">37/21</span>
               </div>
               <div class="day-box">
-                <span class="day-name">Today</span>
+                <span class="day-name" id="futureDayName">Today</span>
                 <div class="weather">
                   <img
                     src="./icons/CloudeSUn.png"
                     alt=""
                     class="weather-icons"
-                    width="50px"
+                    width="44px"
+                    id="futureDayWeatherImage"
                   />
-                  <span class="weather-title">sunny</span>
+                  <span class="weather-title" id="futureDayWeatherTitle"
+                    >sunny</span
+                  >
                 </div>
-                <span class="retio">37/21</span>
+                <span class="retio" id="futureDayWeatherTempArr">37/21</span>
               </div>
             </div>
           </div>
@@ -400,7 +464,7 @@
                 <img
                   src="./icons/Sun.png"
                   alt=""
-                  width="50px"
+                  width="44px"
                   class="weather-icon"
                 />
               </div>
@@ -435,7 +499,7 @@
                       src="./icons/Sun.png"
                       alt=""
                       class="weather-icons"
-                      width="50px"
+                      width="44px"
                     />
                     <span class="weather-title">sunny</span>
                   </div>
@@ -448,7 +512,7 @@
                       src="./icons/cloud.png"
                       alt=""
                       class="weather-icons"
-                      width="50px"
+                      width="44px"
                     />
                     <span class="weather-title">sunny</span>
                   </div>
@@ -461,7 +525,7 @@
                       src="./icons/Sun.png"
                       alt=""
                       class="weather-icons"
-                      width="50px"
+                      width="44px"
                     />
                     <span class="weather-title">sunny</span>
                   </div>
@@ -550,4 +614,5 @@
     </main>
   </body>
   <script src="./script.js"></script>
+  <script src="./APIscript.js"></script>
 </html>

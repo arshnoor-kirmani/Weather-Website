@@ -24,7 +24,7 @@ body {
 }
 main.weather-body {
   border-radius: var(---radius);
-  width: 80vw;
+  width: 95vw;
   height: 80vh;
   filter: drop-shadow(0, 0, 10px, black);
   background-color: #0b131e;
@@ -35,7 +35,7 @@ section.left {
   float: left;
   border-radius: var(---radius);
   height: 100%;
-  width: 10%;
+  width: 8%;
   background-color: var(--weather-box);
 }
 section.right {
