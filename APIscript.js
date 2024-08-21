@@ -32,8 +32,8 @@ let DayName = [
 ];
 const ImageUrl = (iconCode) =>
   `https://cdn.weatherbit.io/static/img/icons/${iconCode}.png`;
-let cite = prompt("Enter City Name");
-let Contrycode = prompt("Enter Country Code").toUpperCase();
+let cite = prompt("Enter City Name") || "Kheri";
+let Contrycode = prompt("Enter Country Code").toUpperCase() || "IN";
 async function FetchCurrentWeatherData(citeName, contrycode) {
   const Url = `https://weatherbit-v1-mashape.p.rapidapi.com/current?&city=${citeName}&country=${contrycode}&units=imperial&lang=en`;
   // let Url = "./assets/current.json";
@@ -97,12 +97,17 @@ async function FetchFutureDayWeatherData(citeName, contrycode) {
     const result = await response.text();
     const data = JSON.parse(result);
     FutureWeatherDataFillFunciton(data["data"]);
+    console.log("arshnoor");
+
+    document.querySelector(".loader-Body").style.display = "none";
   } catch (error) {
     console.error(error);
   }
 }
 FetchCurrentWeatherData(cite, Contrycode);
 FetchCurrentCityWeatherHourly(cite, Contrycode);
+console.log(cite, Contrycode);
+
 FetchFutureDayWeatherData(cite, Contrycode);
 futureDayNameArr[0] = "Today";
 let count = DateObj.getDay();
