@@ -301,12 +301,13 @@ div.day-container {
   grid-template-rows: repeat(7, 17%);
 }
 div.day-box {
-  padding: 0 4%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding-right: 5%;
+  display: grid;
+  grid-template-columns: 25% 55% 15%;
   border-bottom: 1px solid var(--section-bgcolor);
-  /* padding: 0.4rem; */
+  text-align: center;
+  align-items: center;
+  gap: 5%;
 }
 div.day-box:last-child {
   border: none;
@@ -318,6 +319,7 @@ div.day-box div.weather {
 }
 div.day-box span {
   font-size: 0.75rem;
+  width: 100%;
 }
 /* =============================================================================================================== 
                                                     Cites section styling
@@ -532,4 +534,17 @@ div.time-format {
 div.general div.location-acces span {
   font-size: 0.7rem;
   color: var(--text-color);
+}
+.Not-Fount {
+  width: 80%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+.Not-Fount img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  left: 15%;
 }

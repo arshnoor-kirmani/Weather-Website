@@ -1,3 +1,4 @@
+let weather = document.querySelector(".weather-box");
 let currentCity = document.querySelector("#cuurentCity");
 let rainChance = document.querySelectorAll("#rainChance");
 let currentTemp = document.querySelector("#cuurentTemp");
@@ -32,16 +33,23 @@ let DayName = [
 ];
 const ImageUrl = (iconCode) =>
   `https://cdn.weatherbit.io/static/img/icons/${iconCode}.png`;
-let cite = prompt("Enter City Name") || "Kheri";
-let Contrycode = prompt("Enter Country Code").toUpperCase() || "IN";
+try {
+  // let cite = prompt("Enter City Name") || "Kheri";
+  // let Contrycode = prompt("Enter Country Code").toUpperCase() || "IN";
+  // FetchCurrentWeatherData(cite, Contrycode);
+  // FetchCurrentCityWeatherHourly(cite, Contrycode);
+  // FetchFutureDayWeatherData(cite, Contrycode);
+  // document.querySelector(".right").classList.remove("displaynone");
+  // document.querySelector(".Not-Fount").style.display = "none";
+} catch (error) {}
+
 async function FetchCurrentWeatherData(citeName, contrycode) {
-  const Url = `https://weatherbit-v1-mashape.p.rapidapi.com/current?&city=${citeName}&country=${contrycode}&units=imperial&lang=en`;
-  // let Url = "./assets/current.json";
+  // let Url = "./assets/cuurentWeather.json";
+  let Url = `https://api.weatherbit.io/v2.0/current?&city=${citeName}&country=${contrycode}&key=a12a488d63434d4296a12bb8acbdb844&include=minutely`;
   const options = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "214358eb33msh01458e4f1f84c8ep16e9f1jsnb978278dc6a1",
-      "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
+      "Access-Control-Allow-Origin": "*",
     },
   };
 
@@ -63,7 +71,7 @@ async function FetchCurrentCityWeatherHourly(citeName, contrycode) {
   let Url = ` https://api.weatherbit.io/v2.0/history/hourly?city=${citeName}&country=${contrycode}&start_date=${`${yy}-${mm}-${dd}`}&end_date=${`${yy}-${mm}-${
     Number(dd) + 1
   }`}&key=a12a488d63434d4296a12bb8acbdb844`;
-  // let Url = "./assets/secondryhourly.json";
+  // let Url = "./assets/horulyWeether.json";
   const options = {
     method: "GET",
     headers: {
@@ -75,20 +83,18 @@ async function FetchCurrentCityWeatherHourly(citeName, contrycode) {
     const response = await fetch(Url);
     const result = await response.text();
     const data = JSON.parse(result);
-
     CurrentWeatherHourly(data["data"]);
   } catch (error) {
     console.error(error);
   }
 }
 async function FetchFutureDayWeatherData(citeName, contrycode) {
-  const Url = `https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?&city=${citeName}&country=${contrycode}&units=imperial&lang=en`;
-  // let Url = `./assets/dayWise.json`;
+  // let Url = `./assets/forecast.Weather.json`;
+  let Url = `https://api.weatherbit.io/v2.0/forecast/daily?&city=${citeName}&country=${contrycode}&key=a12a488d63434d4296a12bb8acbdb844&include=minutely`;
   const options = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "214358eb33msh01458e4f1f84c8ep16e9f1jsnb978278dc6a1",
-      "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
+      "Access-Control-Allow-Origin": "*",
     },
   };
 
@@ -97,18 +103,11 @@ async function FetchFutureDayWeatherData(citeName, contrycode) {
     const result = await response.text();
     const data = JSON.parse(result);
     FutureWeatherDataFillFunciton(data["data"]);
-    console.log("arshnoor");
-
     document.querySelector(".loader-Body").style.display = "none";
   } catch (error) {
     console.error(error);
   }
 }
-FetchCurrentWeatherData(cite, Contrycode);
-FetchCurrentCityWeatherHourly(cite, Contrycode);
-console.log(cite, Contrycode);
-
-FetchFutureDayWeatherData(cite, Contrycode);
 futureDayNameArr[0] = "Today";
 let count = DateObj.getDay();
 futureDayNameArr.forEach((ele, index) => {
