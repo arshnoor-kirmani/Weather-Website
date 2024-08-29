@@ -113,19 +113,53 @@ section.right {
   grid-template-rows: 7% auto;
   padding: 0.5rem;
 }
-section.right input.search {
+section.right form {
   background-color: var(--weather-box);
   border: none;
   border-radius: calc(var(---radius) - 0.8rem);
   margin-right: 35%;
-  padding-left: 2%;
-  color: #dadada;
+  position: relative;
 }
-section.right input.search::placeholder {
+div.autocomplete {
+  width: 100%;
+  height: 100%;
+}
+section.right #myInput {
+  padding-left: 5%;
+  width: 100%;
+  height: 100%;
+  color: #dadada;
+  background-color: transparent;
+  border: none;
+  z-index: 5;
+}
+section.right input#myInput::placeholder {
   color: #565e6a;
 }
-section.right input.search:focus {
-  outline: 1px solid #565e6a;
+input#myInput:focus {
+  outline: none;
+}
+.autocomplete-items {
+  position: absolute;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--section-bgcolor);
+  border-bottom: 1px solid #959aa1;
+}
+.autocomplete-items div:hover {
+  background-color: var(--text-color);
+}
+.autocomplete-active {
+  background-color: #404956 !important;
+  color: #ffffff;
 }
 section.right div.weather-box {
   margin-top: 1%;
@@ -358,7 +392,7 @@ div.cites-box div.Box {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 35%;
+  width: 50%;
 }
 div.cites-box span.temp {
   font-size: 1.7rem;

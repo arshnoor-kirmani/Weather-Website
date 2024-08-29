@@ -10,9 +10,18 @@ function weathershow() {
   document.querySelector(".right").classList.remove("displaynone");
 }
 function citesshow() {
-  citesBody.classList.remove("displaynone");
   weatherBody.classList.add("displaynone");
   settingBody.classList.add("displaynone");
+  let p = localStorage.getItem("place")
+    ? localStorage.getItem("place")
+    : "Kheri";
+  let C = localStorage.getItem("CountryCode")
+    ? localStorage.getItem("CountryCode")
+    : "IN";
+  FetchCurrentWeatherData(p, C);
+  FetchCurrentCityWeatherHourly(p, C);
+  FetchFutureDayWeatherData(p, C);
+
   document.querySelector(".right").classList.remove("displaynone");
 }
 function settingshow() {
@@ -29,3 +38,4 @@ settingUnitsBtns.forEach((btn) => {
     e.target.classList.add("selected");
   });
 });
+// ====================================================Input Suggestion ================================================================

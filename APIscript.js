@@ -31,17 +31,9 @@ let DayName = [
   "Friday",
   "Saturday",
 ];
+let tempUnit = ["°C", "°F"];
 const ImageUrl = (iconCode) =>
   `https://cdn.weatherbit.io/static/img/icons/${iconCode}.png`;
-try {
-  // let cite = prompt("Enter City Name") || "Kheri";
-  // let Contrycode = prompt("Enter Country Code").toUpperCase() || "IN";
-  // FetchCurrentWeatherData(cite, Contrycode);
-  // FetchCurrentCityWeatherHourly(cite, Contrycode);
-  // FetchFutureDayWeatherData(cite, Contrycode);
-  // document.querySelector(".right").classList.remove("displaynone");
-  // document.querySelector(".Not-Fount").style.display = "none";
-} catch (error) {}
 
 async function FetchCurrentWeatherData(citeName, contrycode) {
   // let Url = "./assets/cuurentWeather.json";
@@ -97,7 +89,7 @@ async function FetchFutureDayWeatherData(citeName, contrycode) {
       "Access-Control-Allow-Origin": "*",
     },
   };
-
+  localStroingLocation(citeName, contrycode);
   try {
     const response = await fetch(Url, options);
     const result = await response.text();
@@ -124,8 +116,8 @@ function CuurentWeatherDataFillFunction(Data) {
   rainChance.forEach((element) => {
     element.innerHTML = Data.precip + "%";
   });
-  currentTemp.innerHTML = Data.temp + "°F ";
-  feelling.innerHTML = Data.app_temp + "°F";
+  currentTemp.innerHTML = Data.temp + tempUnit[0];
+  feelling.innerHTML = Data.app_temp + tempUnit[0];
   windSpeed.innerHTML = Data.wind_spd + "mph ";
   uvIndex.innerHTML = Data.uv;
 }
@@ -176,4 +168,22 @@ function CurrentWeatherHourly(data) {
     currentCityTimeTempArr[index].innerHTML =
       WeatherHourlyTimeArr[index].temp || TempIsNull();
   });
+}
+window.onload = () => {
+  console.log("Load");
+  try {
+    let cite = prompt("Enter City Name") || "Kheri";
+    let Contrycode = prompt("Enter Country Code").toUpperCase() || "IN";
+    const fetchWeatherinfo = (cite, Contrycode) => {
+      FetchCurrentWeatherData(cite, Contrycode);
+      FetchCurrentCityWeatherHourly(cite, Contrycode);
+      FetchFutureDayWeatherData(cite, Contrycode);
+      weathershow();
+    };
+    fetchWeatherinfo(cite, Contrycode);
+  } catch (error) {}
+};
+function localStroingLocation(Name, CountryCode) {
+  localStorage.setItem("place", Name);
+  localStorage.setItem("CountryCode", CountryCode);
 }
